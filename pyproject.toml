@@ -1,0 +1,17 @@
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "D", "S", "SIM", "C4", "PT"]
+ignore = ["D203", "D213"]  # pick one style from each conflicting docstring pair
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["D", "S101"]  # asserts and undocumented test functions are fine
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "--cov=jwks_server --cov-branch --cov-report=term-missing --cov-fail-under=80"
+
+[tool.coverage.report]
+show_missing = true
