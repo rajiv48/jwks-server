@@ -7,8 +7,6 @@ A small RESTful JWKS server (Python 3.11+, FastAPI + Uvicorn) that:
 - issues RS256-signed JWTs at `POST /auth` (authentication is mocked — no body or credentials are checked);
 - signs with an **expired** key, and an already-expired `exp`, when the `expired` query parameter is present.
 
-
-
 ## Endpoints
 
 | Method | Path                     | Behaviour                                                                 |
